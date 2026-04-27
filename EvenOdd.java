@@ -26,7 +26,7 @@ public class EvenOdd {
             System.out.println("Please input the throw for Player 1 (1-5):");
             int player1Throw = getThrow(min, max);
 
-            System.out.println("Please input the throw for Player 1 (1-5):");
+            System.out.println("Please input the throw for Player 2 (1-5):");
             int player2Throw = getThrow(min, max);
 
             int sum = getSum(player1Throw, player2Throw);
@@ -42,6 +42,7 @@ public class EvenOdd {
                     System.out.println("Player 2 has won this match.");
                     player2Score++;
                 }
+                System.out.println();
             }
             else { //Sum is even
                 if (choice1.equals("E")) {
@@ -52,6 +53,7 @@ public class EvenOdd {
                     System.out.println("Player 2 has won this match.");
                     player2Score++;
                 }
+                System.out.println();
             }
         }
         if (player1Score == threshold) {
