@@ -24,20 +24,12 @@ public class EvenOdd {
 
         while (player1Score != threshold && player2Score != threshold) {
             System.out.println("Please input the throw for Player 1 (1-5):");
-            int player1Throw = getInputClass.getInputInt();
-            while (!getInputClass.isInRange(player1Throw, min, max)) {
-                System.out.println("Throw out of range. Input a new throw.");
-                player1Throw = getInputClass.getInputInt();
-            }
+            int player1Throw = getThrow(min, max);
 
             System.out.println("Please input the throw for Player 1 (1-5):");
-            int player2Throw = getInputClass.getInputInt();
-            while (!getInputClass.isInRange(player2Throw, min, max)) {
-                System.out.println("Throw out of range. Input a new throw.");
-                player2Throw = getInputClass.getInputInt();
-            } 
+            int player2Throw = getThrow(min, max);
 
-            int sum = player1Throw + player2Throw;
+            int sum = getSum(player1Throw, player2Throw);
             System.out.println("Player 1 threw " + player1Throw + ", Player 2 threw " + player2Throw);
             System.out.println("Sum is " + sum);
 
@@ -68,5 +60,19 @@ public class EvenOdd {
         else {
             System.out.println("Player 2 wins!");
         }
+    }
+
+    public static int getThrow(int min, int max) {
+        GetInput getInputClass = new GetInput();
+        int playerThrow = getInputClass.getInputInt();
+        while (!getInputClass.isInRange(playerThrow, min, max)) {
+            System.out.println("Throw out of range. Input a new throw.");
+            playerThrow = getInputClass.getInputInt();
+        }
+        return playerThrow;
+    }
+
+    public static int getSum(int num1, int num2) {
+        return num1 + num2;
     }
 }
